@@ -11,11 +11,13 @@ def repo_creator(name,private):
         "name":name,
         "private":private
     }
-    try:
-        r=requests.post(url,headers=head,json=repo_info)
+
+    r=requests.post(url,headers=head,json=repo_info)
+    if r.status_code == 201:
         return f"Repo has been created {r.status_code}"
-    except Exception:
-        return  f"Please check api key or data input {r.status_code}"
+        
+    if r.status_code == 401:
+        return f" sorry repo has not be created please check api key {r.statu_code}"
 
     
 answer=None
