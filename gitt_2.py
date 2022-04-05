@@ -17,7 +17,7 @@ def repo_creator(name,private):
         return f"Repo has been created {r.status_code}"
         
     if r.status_code == 401:
-        return f" sorry repo has not be created please check api key {r.status_code}"
+        return f" sorry repo has not been created please check api key {r.status_code}"
 
     
 answer=None
